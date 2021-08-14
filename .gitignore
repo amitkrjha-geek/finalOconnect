@@ -105,3 +105,6 @@ dist
 package.json
 package-lock.json
 .vscode
+package-lock.json
+package.json
+node_modules

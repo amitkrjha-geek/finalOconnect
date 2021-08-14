@@ -1,5 +1,6 @@
 const {validationResult}=require('express-validator/check');
 const Post=require('../models/post');
+const User=reuire('../models/user');
 
 
 exports.getPosts=(res,req,next)=>{

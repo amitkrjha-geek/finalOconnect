@@ -9,6 +9,9 @@ const bodyParser = require('body-parser');
 app.use(express.json());
 app.use(express.urlencoded());
 
+const feedRoutes= require('./routes/feeds');
+const userRoutes = require('./routes/user_data_route');
+
 
 
 // handling of CORS Error

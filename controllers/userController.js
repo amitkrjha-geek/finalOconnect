@@ -1,6 +1,6 @@
 const User = require('../models/user');
 const { validationResult } = require('express-validator/check');
-const user = require('../models/user');
+
 
 
 exports.createUser = (req, res, next) => {
@@ -80,6 +80,7 @@ exports.updateUserInfo = (req, res, next) => {
     const education = req.body.education,
     const description = req.body.description,
     const portfolioWebsiteUrl = req.body.portfolioWebsiteUrl,
+
     const userId = req.params.userId;
     User.findById(userId)
         .then(user => {

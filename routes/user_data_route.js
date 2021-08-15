@@ -5,7 +5,7 @@ const userDatacontroller = require('../controllers/userController');
 const router = express.Router();
 
 
-router.get('/personalData', userDatacontroller.createUser);
+router.get('/personalData/:userId', userDatacontroller.getUser);
 
 router.post('/createUser', [
     body('Name').trim(),
@@ -21,7 +21,7 @@ router.post('/createUser', [
 ], userDatacontroller.createUser);
 
 
-router.put('/updateUserData', 
+router.put('/updateUserData/:userId', 
 [body('Name').trim(),
 body('emailId').trim(),
 body('content').trim(),

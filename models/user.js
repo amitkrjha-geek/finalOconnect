@@ -1,6 +1,8 @@
 const mongoose = require('mongoose');
+const Post=require('./post');
 
-const userSchema = mongoose.Schema({
+const Schema = mongoose.Schema;
+const userSchema = new Schema({
     _id: mongoose.Schema.ObjectId,
     name: {
         type: String,

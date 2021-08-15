@@ -28,7 +28,7 @@ router.post('/post',
 ],
 feedcontroller.createPost
 );
-router.get('/post/:postId',feedcontroller.getpost);
+router.get('/post/:postId',feedcontroller.getPostbyid);
 
 
 router.put('/post/:postId',

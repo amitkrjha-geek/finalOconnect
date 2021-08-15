@@ -7,7 +7,8 @@ const postSchema=new Schema({
     creator:{
         type: Schema.Types.ObjectId,
       ref: 'User',
-      required: true
+    //   required: 
+    //   true
     },
     companyname:{
         type:String,

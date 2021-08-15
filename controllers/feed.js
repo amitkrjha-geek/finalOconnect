@@ -31,14 +31,15 @@ exports.createPost = (req, res, next) => {
     }
    
     const companyname = req.body.companyname;
-    const linkedlnurl = req.body.linkedlnur;
+    const linkedlnurl = req.body.linkedlnurl;
     const websiteurl = req.body.websiteurl;
     const mode = req.body.mode;
     const startdate = req.body.startdate;
     const Duration = req.body.Duration;
-    const stipend = req.body.applyby;
+    const stipend = req.body.stipend;
+
+    const applyby = req.body.applyby;
     const field = req.body.field;
-    
     const wca = req.body.wca;
     const skillreq = req.body.skillreq;
     const perks = req.body.perks;
@@ -53,9 +54,9 @@ exports.createPost = (req, res, next) => {
          mode : mode,
          startdate : startdate,
          Duration : Duration,
-         stipend : applyby,
+         stipend : stipend,
          field : field,
-        
+         applyby:applyby,
          wca :wca,
          skillreq :skillreq,
          perks : perks,
@@ -66,20 +67,22 @@ exports.createPost = (req, res, next) => {
     post
       .save()
       .then(result => {
+        console.log(result);
+        res.status(200).json(result);
         return User.findById(req.userId);
       })
-      .then(user => {
-        creator = user;
-        user.posts.push(post);
-        return user.save();
-      })
-      .then(result => {
-        res.status(201).json({
-          message: 'Post created successfully!',
-          post: post,
-          creator: { _id: creator._id, name: creator.name }
-        });
-      })
+      // .then(user => {
+      //   creator = user;
+      //   user.post.push(post);
+      //   return user.save();
+      // })
+      // .then(result => {
+      //   res.status(201).json({
+      //     message: 'Post created successfully!',
+      //     post: post,
+      //     // creator: { _id: creator._id, name: creator.name }
+      //   });
+      // })
       .catch(err => {
         if (!err.statusCode) {
           err.statusCode = 500;

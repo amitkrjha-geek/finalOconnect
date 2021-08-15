@@ -35,6 +35,12 @@ const userSchema = mongoose.Schema({
     portfolioWebsiteUrl: {
         type: String,
     },
+    posts: [
+        {
+          type: Schema.Types.ObjectId,
+          ref: 'Post'
+        }
+      ]
 
 },
     { timestamps: true },

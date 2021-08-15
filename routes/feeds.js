@@ -48,7 +48,10 @@ router.put('/post/:postId',
     body('q1').trim(),
     body('q2').trim()
 ],
-feedcontroller.updatepost
+function(req, res){
+    feedcontroller.updatepost;
+  }
+
 );
 
 

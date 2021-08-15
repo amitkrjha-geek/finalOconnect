@@ -3,10 +3,10 @@ const Post=require('../models/post');
 const User=require('../models/user');
 
 
-exports.getPosts=(res,req,next)=>{
+exports.getPosts=(req,res,next)=>{
     //To-Do- Add pagination
 
-    Post.then(posts=>{
+    Post.find().then(posts=>{
         res.status(200).json({
             message:'Fetched posts sucessfully',
             posts:posts

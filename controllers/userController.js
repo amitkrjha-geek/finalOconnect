@@ -71,15 +71,15 @@ exports.getUser = (req, res, next) => {
 
 
 exports.updateUserInfo = (req, res, next) => {
-    const name = req.body.name,
-    const eMailId = req.body.eMailId,
-    const content = req.body.content,
-    const interests = req.body.interests,
-    const githubUrl = req.body.githubUrl,
-    const linkedInId = req.body.linkedInId,
-    const education = req.body.education,
-    const description = req.body.description,
-    const portfolioWebsiteUrl = req.body.portfolioWebsiteUrl,
+    const name = req.body.name;
+    const emailId = req.body.eMailId;
+    const content = req.body.content;
+    const interests = req.body.interests;
+    const githubUrl = req.body.githubUrl;
+    const linkedInId = req.body.linkedInId;
+    const education = req.body.education;
+    const description = req.body.description;
+    const portfolioWebsiteUrl = req.body.portfolioWebsiteUrl;
 
     const userId = req.params.userId;
     User.findById(userId)
@@ -90,7 +90,7 @@ exports.updateUserInfo = (req, res, next) => {
                 throw error;
             }
             post.name = name;
-            post.eMailId = eMailId;
+            post.eMailId = emailId;
             post.content = content;
             post.interests = interests;
             post.githubUrl = githubUrl;

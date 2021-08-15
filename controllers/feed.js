@@ -1,4 +1,4 @@
-const {validationResult}=require('express-validator/check');
+const {validationResult}=require('express-validator');
 const Post=require('../models/post');
 const User=reuire('../models/user');
 
@@ -38,7 +38,7 @@ exports.createPost = (req, res, next) => {
     const Duration = req.body.Duration;
     const stipend = req.body.applyby;
     const field = req.body.field;
-    const companyname = req.body.companyname;
+    
     const wca = req.body.wca;
     const skillreq = req.body.skillreq;
     const perks = req.body.perks;
@@ -48,7 +48,7 @@ exports.createPost = (req, res, next) => {
     let creator;
     const post = new Post({
          companyname = companyname,
-         linkedlnurl = linkedlnur,
+         linkedlnurl = linkedlnurl,
          websiteurl = websiteurl,
          mode = mode,
          startdate = startdate,

@@ -7,7 +7,7 @@ const bodyParser = require('body-parser');
 
 //app.use(bodyParser.json());
 app.use(express.json());
-app.use(express.urlencoded());
+app.use(express.urlencoded({ extended: true }));
 
 const feedRoutes= require('./routes/feeds');
 const userRoutes = require('./routes/user_data_route');

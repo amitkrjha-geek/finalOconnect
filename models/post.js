@@ -4,8 +4,9 @@ const Schema=mongoose.Schema;
 
 const postSchema=new Schema({
     creator:{
-        type:Object,
-        required:String
+        type: Schema.Types.ObjectId,
+      ref: 'User',
+      required: true
     },
     companyname:{
         type:String,

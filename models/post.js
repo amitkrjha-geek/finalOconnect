@@ -7,8 +7,8 @@ const postSchema = new Schema({
     userRespondedToPost: [
         {
             type: Schema.Types.ObjectId,
-            ref: 'User',
-            default:[],
+            ref: 'Response',
+        
         }
     ],
     companyname: {

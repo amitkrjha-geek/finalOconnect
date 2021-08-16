@@ -1,7 +1,15 @@
 const User = require('../models/user');
 const { validationResult } = require('express-validator');
 
-
+exports.getAllUsers = (req, res, next) => {
+    User.find().
+        then(result =>
+            res.status(200).json(
+                { message: "Users fetched.", listOfUsers: result, }
+            )
+        )
+        .catch(err => res.status(404).json({ message: err }));
+}
 
 exports.createUser = (req, res, next) => {
     const errors = validationResult(req);

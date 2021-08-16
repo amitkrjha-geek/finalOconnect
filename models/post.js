@@ -1,75 +1,77 @@
-const mongoose=require('mongoose');
+const mongoose = require('mongoose');
 const User = require('./user');
 
-const Schema=mongoose.Schema;
+const Schema = mongoose.Schema;
 
-const postSchema=new Schema({
-    appliedusers:[{
-        type: Schema.Types.ObjectId,
-        ref: 'Response',
-    }],
-    creator:{
-        type: Schema.Types.ObjectId,
-      ref: 'User',
-    //   required: 
-    //   true
+const postSchema = new Schema({
+    userRespondedToPost: [
+        {
+            type: Schema.Types.ObjectId,
+            ref: 'User',
+            default:[],
+        }
+    ],
+    companyname: {
+        type: String,
+        required: true
+
     },
-    companyname:{
-        type:String,
-        required:true
+    linkedlnurl: {
+        type: String,
+        required: true
     },
-    linkedlnurl:{
-        type:String,
-        required:true
+    websiteurl: {
+        type: String
     },
-    websiteurl:{
-        type:String
+    mode: {
+        type: String,
+        required: true
     },
-    mode:{
-        type:String,
-        required:true
+    startdate: {
+        type: String,
+        required: true
     },
-    startdate:{
-        type:String,
-        required:true
+
+
+
+
+    Duration: {
+        type: String,
+        required: true
     },
-    Duration:{
-        type:String,
-        required:true
+    stipend: {
+        type: String,
+
     },
-    stipend:{
-        type:String,
-        
+    applyby: {
+        type: String,
+        required: true
     },
-    applyby:{
-        type:String,
-        required:true
+    field: {
+        type: String,
+        required: true
     },
-    field:{
-        type:String,
-        required:true
+    wca: {
+        type: String,
+        required: true
     },
-    wca:{
-        type:String,
-        required:true
+    skillreq: {
+        type: String,
+        required: true
     },
-    skillreq:{
-        type:String,
-        required:true
+    perks: {
+        type: String,
+        required: true
     },
-    perks:{
-        type:String,
-        required:true
+    q1: {
+        type: String,
+        required: true
     },
-    q1:{
-        type:String,
-        required:true
-    },
-    q2:{
-        type:String,
-        required:true
+    q2: {
+        type: String,
+        required: true
     }
 },
-{timestamps:true}
+    { timestamps: true }
 );
-module.exports=mongoose.model('Post',postSchema);
+module.exports = mongoose.model('Post', postSchema);

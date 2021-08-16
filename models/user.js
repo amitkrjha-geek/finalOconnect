@@ -3,7 +3,6 @@ const Post=require('./post');
 
 const Schema = mongoose.Schema;
 const userSchema = new Schema({
-    _id: mongoose.Schema.ObjectId,
     name: {
         type: String,
         required: true,
@@ -37,10 +36,11 @@ const userSchema = new Schema({
     portfolioWebsiteUrl: {
         type: String,
     },
-    posts: [
+    userRespondedtoPosts: [
         {
           type: Schema.Types.ObjectId,
-          ref: 'Post'
+          ref: 'Post',
+          default:[],
         }
       ]
 

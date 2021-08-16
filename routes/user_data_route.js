@@ -4,6 +4,8 @@ const userDatacontroller = require('../controllers/userController');
 
 const router = express.Router();
 
+router.get('/allUsers',userDatacontroller.getAllUsers );
+
 
 router.get('/personalData/:userId', userDatacontroller.getUser);
 

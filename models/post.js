@@ -4,6 +4,10 @@ const User = require('./user');
 const Schema=mongoose.Schema;
 
 const postSchema=new Schema({
+    appliedusers:[{
+        type: Schema.Types.ObjectId,
+        ref: 'Response',
+    }],
     creator:{
         type: Schema.Types.ObjectId,
       ref: 'User',

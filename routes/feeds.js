@@ -1,11 +1,12 @@
 const express=require('express');
 const {body}=require('express-validator');
 const feedcontroller=require('../controllers/feed');
+const isAuth= require('../middleware/is-authorized');
 
 const router=express.Router();
 
 //GET/Feed/posts
-router.get('/posts',feedcontroller.getPosts);
+router.get('/posts',isAuth ,feedcontroller.getPosts);
 
 //Post/feed/post
 
@@ -29,7 +30,7 @@ router.post('/post',
 feedcontroller.createPost
 );
 
-router.get('/post/:postId',feedcontroller.getPostbyid);
+router.get('/post/:postId', isAuth,feedcontroller.getPostbyid);
 
 
 router.put('/post/:postId',

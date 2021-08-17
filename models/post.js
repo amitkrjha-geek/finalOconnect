@@ -4,7 +4,7 @@ const User = require('./user');
 const Schema = mongoose.Schema;
 
 const postSchema = new Schema({
-    userRespondedToPost: [
+    responses: [
         {
             type: Schema.Types.ObjectId,
             ref: 'Response',

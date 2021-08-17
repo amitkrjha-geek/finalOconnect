@@ -11,9 +11,6 @@ const userSchema = new Schema({
         type: String,
         required: true
     },
-    content: {
-        type: String
-    },
     interests: {
         type: String,
         required: true

@@ -20,7 +20,6 @@ exports.createUser = (req, res, next) => {
     }
     const name = req.body.name;
     const eMailId = req.body.eMailId;
-    const content = req.body.content;
     const interests = req.body.interests;
     const githubUrl = req.body.githubUrl;
     const linkedInId = req.body.linkedInId;
@@ -30,7 +29,6 @@ exports.createUser = (req, res, next) => {
     const user = new User({
         name: name,
         eMailId: eMailId,
-        content: content,
         interests: interests,
         githubUrl: githubUrl,
         linkedInId: linkedInId,
@@ -81,7 +79,6 @@ exports.getUser = (req, res, next) => {
 exports.updateUserInfo = (req, res, next) => {
     const name = req.body.name;
     const emailId = req.body.eMailId;
-    const content = req.body.content;
     const interests = req.body.interests;
     const githubUrl = req.body.githubUrl;
     const linkedInId = req.body.linkedInId;
@@ -99,7 +96,6 @@ exports.updateUserInfo = (req, res, next) => {
             }
             post.name = name;
             post.eMailId = emailId;
-            post.content = content;
             post.interests = interests;
             post.githubUrl = githubUrl;
             post.linkedInId = linkedInId;

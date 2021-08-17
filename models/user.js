@@ -33,7 +33,7 @@ const userSchema = new Schema({
     portfolioWebsiteUrl: {
         type: String,
     },
-    userRespondedtoPosts: [
+    Postbyuser: [
         {
           type: Schema.Types.ObjectId,
           ref: 'Post',

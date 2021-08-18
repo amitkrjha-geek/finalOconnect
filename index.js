@@ -12,6 +12,7 @@ app.use(express.urlencoded({ extended: true }));
 const feedRoutes= require('./routes/feeds');
 const userRoutes = require('./routes/user_data_route');
 const authRoutes = require('./routes/auth');
+const responseRoutes=require('./routes/response_data');
 
 
 
@@ -30,6 +31,7 @@ app.use((req, res, next) => {
 app.use('/feed', feedRoutes);
 app.use('/auth', authRoutes);
 app.use('/user', userRoutes);
+app.use('/response',responseRoutes);
 
 
 app.use((error, req, res, next) => {

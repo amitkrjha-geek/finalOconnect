@@ -4,7 +4,7 @@ const responsecontroller=require('../controllers/responsecontroller');
 
 const router=express.Router();
 //get the response
-router.post('/response/:postId',
+router.post('/:postId',
 
   [ body('ans1').trim(),
    body('ans2').trim()],
@@ -12,5 +12,6 @@ router.post('/response/:postId',
    responsecontroller.responsebyId
 );
 
-router.get('/response/:postId',responsecontroller.getbypost);
+router.get('/:postId',responsecontroller.getbypost);
 
+module.exports = router;
